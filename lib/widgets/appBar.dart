@@ -14,21 +14,21 @@ AppBar appBar(BuildContext ctx) {
     ),
     actions: [
       CircleAvatar(
-        backgroundColor: Color.fromRGBO(57, 58, 60, 1),
+        backgroundColor: Theme.of(ctx).hoverColor,
         child: IconButton(
           icon: Icon(Icons.search, color: Colors.white),
           onPressed: () {},
-          color: Colors.black,
+          color: Theme.of(ctx).appBarTheme.actionsIconTheme.color,
         ),
       ),
       GestureDetector(
         child: CircleAvatar(
-          backgroundColor: Color.fromRGBO(57, 58, 60, 1),
+          backgroundColor: Theme.of(ctx).hoverColor,
           child: SvgPicture.asset(
             MyIcons.messenger_icon,
             height: _size.width(25),
             width: _size.width(25),
-            color: Colors.white,
+            color: Theme.of(ctx).appBarTheme.actionsIconTheme.color,
           ),
         ),
       ),
