@@ -16,9 +16,12 @@ AppBar appBar(BuildContext ctx) {
       CircleAvatar(
         backgroundColor: Theme.of(ctx).hoverColor,
         child: IconButton(
-          icon: Icon(Icons.search, color: Colors.white),
+          splashColor: Colors.transparent,
+          icon: Icon(
+            Icons.search,
+            color: Theme.of(ctx).appBarTheme.actionsIconTheme.color,
+          ),
           onPressed: () {},
-          color: Theme.of(ctx).appBarTheme.actionsIconTheme.color,
         ),
       ),
       GestureDetector(

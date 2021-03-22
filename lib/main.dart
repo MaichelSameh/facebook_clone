@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider<MaterialAppProvider>(
       create: (ctx) => MaterialAppProvider(),
       builder: (ctx, child) => MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: HomeScreen(),
         themeMode: ctx.watch<MaterialAppProvider>().themeMode,
         darkTheme: darkTheme,

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../widgets/widgets.dart';
+import '../providers/providers.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -13,7 +15,17 @@ class _MainScreenState extends State<MainScreen> {
     return Container(
       child: Column(
         children: [
-          MindPost(),
+          mindPost(context),
+          Consumer<MaterialAppProvider>(
+            builder: (ctx, provider, child) => Switch.adaptive(
+              value: ctx.watch<MaterialAppProvider>().theme,
+              onChanged: (value) =>
+                  ctx.read<MaterialAppProvider>().updateThemeMode(
+                        value ? ThemeMode.dark : ThemeMode.light,
+                      ),
+            ),
+          ),
+          buildStatusBar(context),
         ],
       ),
     );

@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: appBar(context),
       body: Column(
         children: [
-          MyTabBar(_pageNumber, animate),
+          buildTabBar(_pageNumber, animate, context),
           Expanded(
             child: PageView(
               children: [
